@@ -9,7 +9,7 @@ jobs:
         include:
         - os: ubuntu-latest
           python: 3.8
-          cc: gcc-5
+          cc: gcc
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
