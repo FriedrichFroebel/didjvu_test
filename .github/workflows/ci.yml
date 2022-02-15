@@ -15,10 +15,10 @@ jobs:
           python: 3.9
           cc: gcc
           gamera: master
-        #- os: ubuntu-latest
-        #  python: '3.10'
-        #  cc: gcc
-        #  gamera: master
+        - os: ubuntu-latest
+          python: '3.10'
+          cc: gcc
+          gamera: master
     runs-on: ${{ matrix.os }}
     name: Python ${{ matrix.python }} with Gamera ${{ matrix.gamera }}
     steps:
@@ -110,11 +110,11 @@ jobs:
       #run: |
       #  cp -a /usr/lib/python2.7/dist-packages/gi ${{env.pythonLocation}}/lib/python2.7/site-packages/
       #  mv -v ${{env.pythonLocation}}/lib/python2.7/site-packages/gi/_gi{.x86_64-linux-gnu,}.so
-    # Regular `nose` does not work any more with Python 3.10: https://github.com/nose-devs/nose/issues/1099
+    # Regular `nose` installation does not work any more with Python 3.10: https://github.com/nose-devs/nose/issues/1099
     # TODO: Upgrade to `nose2` or another test runner.
     - name: install nose
       run:
-        python -m pip install nose
+        "pip install -U nose --no-binary :all:"
     - name: run tests
       run:
         make test
