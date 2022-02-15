@@ -10,6 +10,7 @@ jobs:
         - os: ubuntu-latest
           python: 3.8
           cc: gcc
+          gamera: master
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
@@ -58,14 +59,15 @@ jobs:
       with:
         path: ~/.ccache
         key:
-          ccache-${{ matrix.os }}-${{ env.cc }}
+          ccache-${{ matrix.os }}-${{ env.cc }}-${{ matrix.gamera }}
         restore-keys:
-          ccache-${{ matrix.os }}-${{ env.cc }}
+          ccache-${{ matrix.os }}-${{ env.cc }}-${{ matrix.gamera }}
+      # if: ${{ matrix.gamera != 'master' }}
     - name: download Gamera
       run: |
-        url="https://github.com/hsnr-gamera/gamera-4/archive/master.tar.gz"
+        url="https://github.com/hsnr-gamera/gamera-4/archive/${{ matrix.gamera }}.tar.gz"
         mkdir -p deps/
-        wget "$url" -O deps/gamera-master.tar.gz
+        wget "$url" -O deps/gamera-${{ matrix.gamera }}.tar.gz
     - name: unpack Gamera
       run: |
         cd deps/
