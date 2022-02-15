@@ -63,7 +63,7 @@ jobs:
           ccache-${{ matrix.os }}-${{ env.cc }}
     - name: download Gamera
       run: |
-        url="https://github.com/hsnr-gamera/gamera/archive/master.tar.gz"
+        url="https://github.com/hsnr-gamera/gamera-4/archive/master.tar.gz"
         mkdir -p deps/
         wget "$url" -O deps/gamera-master.tar.gz
     - name: unpack Gamera
