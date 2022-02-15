@@ -43,7 +43,7 @@ jobs:
           libtiff-dev
           libxml2-utils
           minidjvu
-          python3-gi
+          gobject-introspection
           xsltproc
     - name: set up CC and CXX env variables
       run: |
