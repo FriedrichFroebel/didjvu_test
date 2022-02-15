@@ -112,6 +112,7 @@ jobs:
     - name: run tests
       run:
         make test
+    # Does not work correctly with `py3exiv2` installed for now.
     #- name: run pyflakes
       #run: |
         #python -m pip install pyflakes
