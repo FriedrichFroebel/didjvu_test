@@ -106,6 +106,9 @@ jobs:
         sudo apt-get install libboost-python-dev libexiv2-dev
         python -m pip install py3exiv2
       if: ${{ matrix.python == '3.8' }}  # Fails with `cannot find -lboost_python39` otherwise.
+    - name: set up PyGI
+      run: |
+        python -m pip install vext vext.gi
     #- name: set up PyGI
       #run: |
       #  cp -a /usr/lib/python2.7/dist-packages/gi ${{env.pythonLocation}}/lib/python2.7/site-packages/
