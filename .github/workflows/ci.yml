@@ -15,10 +15,10 @@ jobs:
           python: 3.9
           cc: gcc
           gamera: master
-        #- os: ubuntu-latest
-        #  python: '3.10'
-        #  cc: gcc
-        #  gamera: master
+        - os: ubuntu-latest
+          python: '3.10'
+          cc: gcc
+          gamera: master
     runs-on: ${{ matrix.os }}
     name: Python ${{ matrix.python }} with Gamera ${{ matrix.gamera }}
     steps:
