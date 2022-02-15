@@ -123,6 +123,9 @@ def _get_method_params_help(methods):
 class TestAction(argparse.Action):
 
     def __call__(self, parser, namespace, values, option_string=None):
+        # TODO: Replace `nose` which is broken on Python 3.10.
+        import collections
+        collections.Callable = collections.abc.Callable
         import nose
         argv = ['nosetests']
         argv += values
