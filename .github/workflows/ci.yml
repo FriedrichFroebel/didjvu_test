@@ -108,8 +108,11 @@ jobs:
       if: ${{ matrix.python == '3.8' }}  # Fails with `cannot find -lboost_python39` otherwise.
     - name: set up PyGI
       run: |
-        cp -a /usr/lib/python3.8/dist-packages/gi ${{ env.pythonLocation }}/lib/python{{ matrix.python }}/site-packages/
-        mv -v ${{ env.pythonLocation }}/lib/python3.8/site-packages/gi/_gi{.x86_64-linux-gnu,}.so
+        python -m pip install pygobject
+    #- name: set up PyGI
+    #  run: |
+    #    cp -a /usr/lib/python3.8/dist-packages/gi ${{ env.pythonLocation }}/lib/python{{ matrix.python }}/site-packages/
+    #    mv -v ${{ env.pythonLocation }}/lib/python3.8/site-packages/gi/_gi{.x86_64-linux-gnu,}.so
     # Regular `nose` does not work any more with Python 3.10: https://github.com/nose-devs/nose/issues/1099
     # TODO: Upgrade to `nose2` or another test runner.
     - name: install nose
