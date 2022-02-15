@@ -43,7 +43,7 @@ jobs:
           libtiff-dev
           libxml2-utils
           minidjvu
-          gobject-introspection
+          libgirepository1.0-dev
           xsltproc
     - name: set up CC and CXX env variables
       run: |
