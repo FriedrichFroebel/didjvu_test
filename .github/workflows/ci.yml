@@ -111,10 +111,11 @@ jobs:
       #  cp -a /usr/lib/python2.7/dist-packages/gi ${{env.pythonLocation}}/lib/python2.7/site-packages/
       #  mv -v ${{env.pythonLocation}}/lib/python2.7/site-packages/gi/_gi{.x86_64-linux-gnu,}.so
     # Regular `nose` does not work any more with Python 3.10: https://github.com/nose-devs/nose/issues/1099
+    # `nose-py3` does not declare `six` as dependency, but is is required.
     # TODO: Upgrade to `nose2` or another test runner.
     - name: install nose
       run:
-        python -m pip install nose-py3
+        python -m pip install six nose-py3
     - name: run tests
       run:
         make test
