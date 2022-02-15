@@ -16,7 +16,7 @@ jobs:
           cc: gcc
           gamera: master
         - os: ubuntu-latest
-          python: 3.10
+          python: '3.10'
           cc: gcc
           gamera: master
     runs-on: ${{ matrix.os }}
