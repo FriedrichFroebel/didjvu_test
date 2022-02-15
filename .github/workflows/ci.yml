@@ -11,6 +11,10 @@ jobs:
           python: 3.8
           cc: gcc
           gamera: master
+        - os: ubuntu-latest
+          python: 3.9
+          cc: gcc
+          gamera: master
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
