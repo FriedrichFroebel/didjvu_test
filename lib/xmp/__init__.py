@@ -26,7 +26,7 @@ backend = None
 
 try:
     from . import gexiv2_backend as backend
-except ImportError as import_error:  # no coverage
+except ImportError as import_error:  #  # pylint: disable=F841; no coverage
     pass
 
 if backend is None:  # no coverage

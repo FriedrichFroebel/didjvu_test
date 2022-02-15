@@ -44,7 +44,7 @@ except ImportError as ex:  # no coverage
     raise
 del gamera  # quieten pyflakes
 
-from gamera import __version__ as version
+# from gamera import __version__ as version  # TODO: Re-add if final Gamera release is available.
 from gamera.core import load_image as _load_image
 from gamera.core import init_gamera as _init
 from gamera.core import Image, RGB, GREYSCALE, ONEBIT, Point, Dim, RGBPixel
