@@ -20,7 +20,7 @@ import os
 import sys
 
 # TODO: Replace `nose` which is broken on Python 3.10.
-if sys.version_info < (3, 10):
+if sys.version_info >= (3, 10):
     import collections
     collections.Callable = collections.abc.Callable
 
