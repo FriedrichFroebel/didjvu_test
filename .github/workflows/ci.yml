@@ -111,7 +111,7 @@ jobs:
         cd deps/boost_*/
         ./bootstrap.sh --with-libraries=python
     - run: |
-        cd deps/boost-*/
+        cd deps/boost_*/
         sudo ./b2 install
     - name: install py3exiv2  # # libboost-python-dev
       run: |
