@@ -104,10 +104,14 @@ jobs:
       run: |
         mkdir deps
         wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz -O deps/boost.tar.gz
+    - run: |
         cd deps
         tar -xvzf boost.tar.gz
-        cd boost-*/
+    - run: |
+        cd deps/boost-*/
         ./bootstrap.sh --with-libraries=python
+    - run: |
+        cd deps/boost-*/
         sudo ./b2 install
     - name: install py3exiv2  # # libboost-python-dev
       run: |
