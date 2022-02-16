@@ -102,6 +102,7 @@ jobs:
         python -m pip install python-xmp-toolkit
     - name: install Boost.Python
       run: |
+        mkdir deps
         wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz -O deps/boost.tar.gz
         cd deps
         tar -xvzf boost.tar.gz
