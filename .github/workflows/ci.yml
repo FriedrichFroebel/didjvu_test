@@ -108,6 +108,8 @@ jobs:
         cd deps
         tar -xvzf boost.tar.gz
     - run: |
+        pwd
+        ls -l
         cd deps/boost-*/
         ./bootstrap.sh --with-libraries=python
     - run: |
