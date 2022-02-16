@@ -20,8 +20,9 @@ import os
 import sys
 
 # TODO: Replace `nose` which is broken on Python 3.10.
-import collections
-collections.Callable = collections.abc.Callable
+if sys.version_info < (3, 10):
+    import collections
+    collections.Callable = collections.abc.Callable
 
 import nose
 import nose.plugins.cover
