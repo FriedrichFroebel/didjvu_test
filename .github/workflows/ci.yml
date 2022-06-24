@@ -164,5 +164,8 @@ jobs:
       run: |
         cd /
         man 1 didjvu | grep -A 10 -w DIDJVU
+    - name: show installed Python packages
+      run:
+        pip freeze
 
 # vim:ts=2 sts=2 sw=2 et
